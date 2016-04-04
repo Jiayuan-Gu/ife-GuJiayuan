@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/**
+ * Task 6 Newspaper Layout Design
+ * @Gu Jiayuan
+ * @date    2016-03-20 22:00:37
+ * @1.0 $Id$
+ */
+*{
+	box-sizing: border-box;
+}
+body{
+	width: 980px;
+	height: 1386px;
+	margin: 0 auto;
+	padding-left: 44px;
+	padding-right: 44px;
+	border: 1px solid #000;
+	position: relative;
+}
+header{
+	width: 892px;
+	height: 61px;
+	margin-bottom: 30px;
+	border-bottom: 2px solid #938e8c;
+	position: relative;
+	font-size: 12px;
+}
+footer{
+	clear: both;
+	width: 892px;
+	border-top: solid 1px #938e8c;
+}
+#block-1{
+	background: #d45d5c;
+	width: 110px;
+	height: 61px;
+}
+#block-2{
+	width: 191px;
+	height: 301px;
+	background: #75b86b;
+	opacity: 0.1;
+}
+#block-3{
+	width: 191px;
+	height: 301px;
+	background: #cc8091;
+	opacity: 0.1;
+}
+#block-4{
+	width: 458px;
+	height: 61px;
+	background: #000000;
+	opacity: 0.5;
+	padding: 10px;
+}
+#block-5{
+	height: 44px;
+	border-left: 3px solid #72b16a;
+	margin-left: 42px;
+	padding-left: 10px;
+}
+#block-6{
+	background: #d45d5c;
+	width: 260px;
+	height: 160px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row;
+}
+.flex-center {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+#box-1{
+	width: 203px;
+	height: 301px;
+	border-top: solid 2px #cc8091;
+}
+#box-2{
+	width: 641px;
+	margin-top: 20px;
+}
+#box-2 div.context{
+	flex: 1;
+	margin-right: 10px;
+}
+#box-2 .context h1{
+	font-size: 16px;
+	text-decoration: underline;
+	font-family: 微软雅黑,"Microsoft YaHei",sans-serif;
+	font-weight: bold;
+	letter-spacing: 0em;
+}
+#box-3{
+	width: 415px;
+	margin-top: 72px;
+}
+#box-4{
+	width: 458px;
+	margin-top: 60px;
+	position: relative;
+}
+#box-5{
+	width: 459px;
+	height: 318px;
+	margin-top: 30px;
+	background: #FFF1C3;
+	position: relative;
+}
+#par-1{
+	font-size: 24px;
+	color: #000000;
+	text-decoration: underline;
+	line-height: 30px;
+	padding-top: 5px;
+}
+#par-1 strong{
+	font-size: 120%;
+}
+#par-2{
+	font-size: 12px;
+	color: #676767;
+	padding-top: 5px;
+	line-height: 10px;
+}
+#par-3{
+	font-size: 116px;
+	color: #75b86b;
+	font-style: oblique;
+	margin-left: -20px;
+	margin-top: -5px;
+}
+#par-4{
+	position: relative;
+	color: #cc8091;
+	overflow: auto;
+	margin-top: -5px;
+	vertical-align:bottom;
+}
+#par-5{
+	border-bottom: 2px solid #11456b;
+	padding-bottom: 20px;
+	font-weight: bold;
+	font-size: 42px;
+	color: #11456b;
+	line-height: 36px;
+}
+#par-5 strong{
+	font-size: 72px;
+	color: #f5e327;
+	font-style: oblique;
+}
+#par-5 div{
+	position: relative;
+	top: 5px;
+	font-size: 33px;
+}
+#par-6{
+	margin-top: 25px;
+}
+#par-6 div.left{
+	font-size: 70px;
+	color: #f5e327;
+	margin: 25px 5px 25px 0px;
+}
+#par-7{
+	text-align: left;
+	font-size: 16px;
+	color: #5a5b5b;
+	line-height: 40px;
+	font-family: 宋体,SimSum，sans-serif;
+	padding: 15px 0px 0px 32px;
+}
+#par-7 div:before{
+	content: "";
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid #10456b;
+	display: inline-block;
+	margin-right: 5px;
+}
+#par-8{
+	padding-left: 5px;
+}
+#par-9{
+	font-size: 21px;
+	color: #ffffff;
+	line-height: 24px;
+	font-style: italic;
+}
+#par-10{
+	font-size: 12px;
+	color: #ffffff;
+	line-height: 12px;
+}
+#par-11{
+	font-size: 14px;
+	color: #5a5b5b;
+	font-style: italic;
+	line-height: 16px;
+	font-family: 黑体,SimHei，sans-serif;
+	margin-bottom: 42px;
+	margin-right: 20px;
+}
+#par-11 span{
+	font-size: 72px;
+	color: #d45d5c;
+	font-style: normal;
+}
+#par-11 span.left{
+	position: relative;
+	top: 10px;
+	left: -30px;
+}
+#par-11 span.right{
+	position: relative;
+	top: 30px;
+	left: 30px;
+}
+#pic-1{
+	width: 641px;
+	height: 301px;
+	position: relative;
+	background: url(../img/pic6-1.png);
+}
+#pic-2{
+	float: right;
+	padding: 10px 0 10px 10px;
+}
+#pic-3{
+	position: relative;
+	width: 458px;
+	height: 275px;
+	background: url(../img/pic6-3.png);
+}
+/*特殊样式类*/
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+.horizontal-center{
+	position: relative;
+	top:50%;
+	transform: translateY(-50%);
+}
+.leftdown{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.rightdown{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.context{
+	font-size: 12px;
+	color: #767777;
+	line-height: 16px;
+	letter-spacing: 0.15em;
+	font-family: 宋体,SimSum，sans-serif;
+}
+/*字体类*/
+.HeiTi{
+	font-family: 黑体,SimHei，sans-serif;
+}
+.MSYH{
+	font-family: 微软雅黑,"Microsoft YaHei",sans-serif;
+}
+.KaiTi{
+	font-family: 楷体,KaiTi,sans-serif;
+}

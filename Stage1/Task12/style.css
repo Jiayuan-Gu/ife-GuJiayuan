@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Gu Jiayuan (you@example.org)
+ * @date    2016-03-27 22:00:13
+ * @version $Id$
+ */
+*{
+	box-sizing: border-box;
+}
+.container{
+	margin: 10px;
+	padding: 10px;
+	position: relative;
+}
+/* 1st table part*/
+tr:nth-child(odd){
+	background: white;
+}
+tr:nth-child(even){
+	background: #C0C0C0;
+}
+tr:nth-child(-n+4){/*must be -n+4, not 4-n*/
+	color: red;
+}
+tr:first-child{
+	background: black;
+	color: white;
+}
+/* 2nd input part*/
+#tinput{
+	margin:0 auto;
+}
+#tinput:focus,#tinput:hover{
+	transform: translateX(20%) scale(1.5,1.5);
+	transition: all .5s ease-in;
+}
+/*3rd banner part*/
+[id^="banner-"]{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	z-index: 0;
+}
+[id^="banner-"] div{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+[id^="banner-"]:target{
+	z-index: 1;
+}
+#number{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	z-index: 2;
+}
+#number a {
+	display: inline-block;
+	height: 22px;
+	width: 22px;
+	text-align: center;
+	text-decoration: none;
+	background: #C0C0C0;
+}
+.red{
+	background: red;
+}
+.blue{
+	background: blue;
+}
+.green{
+	background: green;
+}
+.first{
+	animation: move1 12s ease-in-out infinite;
+}
+.second{
+	animation: move2 12s ease-in-out infinite;
+}
+.third{
+	animation: move3 12s ease-in-out infinite;
+}
+@-webkit-keyframes move1{
+	0%{
+		left:0;
+		z-index: 1;
+	}
+	33%{
+		left: -100%;
+		z-index: 0.4;
+	}
+	66%{
+		left:100%;
+		z-index: 0.5;
+	}
+	100%{
+		left:0;
+		z-index: 1;
+	}
+}
+@-webkit-keyframes move2{
+	0%{
+		left:100%;
+		z-index: 1;
+	}
+	33%{
+		left: 0%;
+		z-index: 1;
+	}
+	66%{
+		left:-100%;
+		z-index: 0.4;
+	}
+	100%{
+		left:100%;
+		z-index: 0.5;
+	}
+}
+@-webkit-keyframes move3{
+	0%{
+		left:-100%;
+		z-index: 0.4;
+	}
+	33%{
+		left: 100%;
+		z-index: 0.5;
+	}
+	66%{
+		left:0%;
+		z-index: 1;
+	}
+	100%{
+		left:-100%;
+		z-index: 1;
+	}
+}

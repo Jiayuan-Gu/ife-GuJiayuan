@@ -14,14 +14,18 @@
 	}
 	#box-wrap{
 		overflow: auto;
+		margin: 0 25%;
+		width: 50%;
+		display: inline-flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: flex-end;
 	}
 	#box-wrap div{
-		width: 50px;
-		height: 50px;
-		padding: 10px;
-		margin: 10px;
-		float: left;
-		text-align: center;
+		flex: 1;
+		max-width: 40px;
+		border: 1px solid #eee;
 	}
 </style>
 <script src="task.js"></script>
@@ -34,6 +38,7 @@
     	<span><input type="button" id="rin" value="右侧入"></span>
     	<span><input type="button" id="lout" value="左侧出"></span>
     	<span><input type="button" id="rout" value="右侧出"></span>
+    	<span><input type="button" id="sort" value="排序"></span>
     	<span><input type="button" id="random" value="随机"></span>
     </fieldset>
     <div id="box-wrap">

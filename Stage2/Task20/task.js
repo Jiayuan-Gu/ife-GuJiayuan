@@ -1,33 +1,36 @@
 //variable for array
 var dqueue = new Array();
-const color = [,"red","pink","orange","yellow","green","lime","aqua","blue","purple","Olive"];
+const color = ["red","green","seagreen","orange","blue","purple","olive","slategray"];
 var display;
 
+/*随机生成数据*/
 function RandomGenerator(num) {
 	dqueue = new Array();
 	for(var i=0; i<num; ++i){
 		dqueue.push(parseInt(Math.random()*90+10));
 	}
 }
-/*获取输入框里的数字*/
-function GetNum(argument) {
-	var input = document.getElementById("num-input");
-	if(isNaN(input.value))alert("Please enter a number.");
-	else if(input.value<10 || input.value>100){
-		alert("The input should fall in the range of 10 to 100.");
-	}else{
-		return input.value;
-	}
+
+/*获取text-area里的内容*/
+function GetContent(argument) {
+	var input = document.getElementById("content-input").value;
+	if(!input)return;
+	return input.split(/[^0-9a-zA-Z\u4e00-\u9fa5]+/).filter(function (d) {
+		 return d!=''; 
+	});
 }
 
-function RenderChart() {
+function RenderChart(input) {
 	display.innerHTML="";
 	for (var i = 0; i < dqueue.length; i++) {
 		var newBlock = document.createElement("div");
 		newBlock.className = "box";
-		newBlock.style.backgroundColor = color[parseInt(dqueue[i]/10)];
-		newBlock.id = ""+i+"box";
+		newBlock.id = "" + i + "box";
+		newBlock.style.backgroundColor = color[i%color.length];
 		newBlock.innerHTML = dqueue[i];
+		if(input){
+			newBlock.innerHTML=newBlock.innerHTML.replace(new RegExp(input, "g"), "<span class='highlight'>" + input + "</span>");
+		}
 		display.appendChild(newBlock);
 	}
 }
@@ -44,14 +47,19 @@ function clkBtnHandler(e) {
 		RenderChart();
 		return;
 	}
-	var input = GetNum();
+	var input = GetContent();
 	if(!input)return;
 	if(btn.id == "lin"){
-		dqueue.unshift(input);
+		input.forEach(function (str) {
+			 dqueue.unshift(str);
+		});
 	}else if(btn.id == "rin"){
-		dqueue.push(input);
-	}else if (btn.id == "random"){
-		RandomGenerator(input);
+		input.forEach(function (str) {
+			 dqueue.push(str);
+		});
+	}else if (btn.id == "search"){
+		RenderChart(document.getElementById("text-input").value);
+		return;
 	}else{
 		alert("Click on " + e.target.nodeName);
 		return;

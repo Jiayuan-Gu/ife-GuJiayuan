@@ -3,25 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Task19 Sort</title>
+<title>Task20 Search</title>
 <style>
 	*{
 		box-sizing: border-box;
 	}
 	#form{
 		margin: 0 auto;
-		width: 50%;
+		width: 80%;
 	}
 	#box-wrap{
 		overflow: auto;
 	}
 	#box-wrap div{
-		width: 50px;
 		height: 50px;
 		padding: 10px;
 		margin: 10px;
 		float: left;
 		text-align: center;
+	}
+	span.highlight{
+		font-weight: bold;
+		color: gold;
 	}
 </style>
 <script src="task.js"></script>
@@ -29,12 +32,13 @@
 <body>
     <fieldset id="form">
     	<legend>操作区</legend>
-    	<span><input type="text" id="num-input"></input></span>
+    	<span><textarea id="content-input"></textarea></span>
     	<span><input type="button" id="lin" value="左侧入"></span>
     	<span><input type="button" id="rin" value="右侧入"></span>
     	<span><input type="button" id="lout" value="左侧出"></span>
     	<span><input type="button" id="rout" value="右侧出"></span>
-    	<span><input type="button" id="random" value="随机"></span>
+    	<span><input type="text" id="text-input"></span>
+    	<span><input type="button" id="search" value="查询"></span>
     </fieldset>
     <div id="box-wrap">
     </div>

@@ -20,14 +20,34 @@ function GetNum(argument) {
 	}
 }
 
+function mySort(argument) {
+	var ready=0,timer;
+	function SelectSort(argument) {
+		if(ready==dqueue.length){
+			clearInterval(timer);
+		}else{
+			for(var i=dqueue.length-1;i>ready;--i){
+				if(dqueue[i]<dqueue[i-1]){
+					var temp=dqueue[i];
+					dqueue[i]=dqueue[i-1];
+					dqueue[i-1]=temp;
+				}
+			}
+			++ready;
+		}
+		RenderChart();
+	}
+	timer=setInterval(SelectSort,50);
+}
+
 function RenderChart() {
 	display.innerHTML="";
 	for (var i = 0; i < dqueue.length; i++) {
 		var newBlock = document.createElement("div");
-		newBlock.className = "box";
+		newBlock.className = "block";
+		newBlock.style.height = "" + 5*dqueue[i] + "px";
 		newBlock.style.backgroundColor = color[parseInt(dqueue[i]/10)];
-		newBlock.id = ""+i+"box";
-		newBlock.innerHTML = dqueue[i];
+		newBlock.id = ""+i+"block";
 		display.appendChild(newBlock);
 	}
 }
@@ -43,27 +63,30 @@ function clkBtnHandler(e) {
 		dqueue.pop();
 		RenderChart();
 		return;
+	}else if(btn.id == "sort"){
+		mySort();
+		return;
 	}
 	var input = GetNum();
 	if(!input)return;
-	if(btn.id == "lin"){
+	if(btn.id == "lin" && dqueue.length<=60){
 		dqueue.unshift(input);
-	}else if(btn.id == "rin"){
+	}else if(btn.id == "rin" && dqueue.length<=60){
 		dqueue.push(input);
-	}else if (btn.id == "random"){
+	}else if (btn.id == "random" && input<=60){
 		RandomGenerator(input);
 	}else{
-		alert("Click on " + e.target.nodeName);
+		alert("Something went wrong.");
 		return;
 	}
 	RenderChart();
 }
 
 function dltBlockHandler(e) {
-	var box = e.target;
-	if(box.className == "box"){
-		var index = parseInt(box.id);
-		display.removeChild(box);
+	var block = e.target;
+	if(block.className == "block"){
+		var index = parseInt(block.id);
+		display.removeChild(block);
 		dqueue.splice(index,1);
 	}
 }
